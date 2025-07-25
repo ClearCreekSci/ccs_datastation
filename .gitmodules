@@ -1,0 +1,3 @@
+[submodule "ccs_dbus_objects"]
+	path = ccs_dbus_objects
+	url = git@github.com:ClearCreekSci/ccs_dbus_objects.git
