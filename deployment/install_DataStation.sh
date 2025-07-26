@@ -45,7 +45,7 @@ do
     PYTHON_VER=`basename "${entry}"`
 done
 
-cp -r "${UNZIP_DST}/dbus_objects" "${VENV_LIB_DIR}/${PYTHON_VER}/${SITE_DIR}/"
+cp -r "${UNZIP_DST}/ccs_dbus_objects" "${VENV_LIB_DIR}/${PYTHON_VER}/${SITE_DIR}/dbus_objects"
 
 # Setup up the DataStation files...
 mkdir -p "${DATASTATION_DST}"
@@ -54,6 +54,7 @@ echo "Copying DataStation files..."
 cp "${UNZIP_DST}/data_server.py" "${DATASTATION_DST}"
 cp "${UNZIP_DST}/bluez_dbus.py" "${DATASTATION_DST}"
 cp -r  "${UNZIP_DST}/plugins" "${DATASTATION_DST}"
+cp -r  "${UNZIP_DST}/manifest.xml" "${DATASTATION_DST}"
 cp "${UNZIP_DST}/system/ccsdata.service" "${SYSTEMD_SERVICE_DST}"
 
 echo "Creating ccsdata systemd service..."
