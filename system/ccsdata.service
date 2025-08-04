@@ -1,0 +1,16 @@
+[Unit]
+Description=Clear Creek Scientific Data Server
+After=dbus.service bluetooth.service
+Requires=dbus.service bluetooth.service
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+WorkingDirectory=/opt/ccs/DataStation
+ExecStart=/opt/ccs/venv/bin/python3 /opt/ccs/DataStation/data_server.py
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=default.target
+
