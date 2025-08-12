@@ -25,6 +25,11 @@ if [ $? -ne 0 ]; then
     exit
 fi
 
+# Make sure I2C is turned on...
+echo "Enabling I2C..."
+raspi-config nonint do_i2c 0
+
+echo "Extracting files..."
 rm -rf ${UNZIP_DST}
 mkdir ${UNZIP_DST}
 
@@ -68,6 +73,7 @@ echo "Configuring ccsdata dbus requirements..."
 cp "${UNZIP_DST}/system/com.clearcreeksci.conf" "${DBUS_CONF_DST}"
 
 rm -rf ${UNZIP_DST}
+
 
 echo "Installation completed succesfully. Please reboot the device"
 
