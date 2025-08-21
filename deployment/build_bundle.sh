@@ -1,5 +1,5 @@
 VERSION="NotForRelease"
-SUFFIX="DataStation_Install_Bundle"
+SUFFIX="WeatherStation_Install_Bundle"
 DBUS_OBJS_PATH="../ccs_dbus_objects"
 
 if [ $# -eq 1 ]; then
